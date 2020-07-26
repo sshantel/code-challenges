@@ -30,7 +30,6 @@ def word_lengths(sentence):
     return word_length_dictionary
 
 
-# doctest
 if __name__ == "__main__":
     import doctest
 result = doctest.testmod()
