@@ -18,6 +18,7 @@ Given two lists. concatenate them (that is, combine them into a single list).
 
 def concat_lists(list1, list2):
     """Combine lists."""
+    return list1 + list2
 
 
 if __name__ == "__main__":
