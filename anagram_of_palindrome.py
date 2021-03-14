@@ -29,6 +29,19 @@ Examples::
 
 def is_anagram_of_palindrome(word):
     """Is the word an anagram of a palindrome?"""
+    letter_count_dict = {}
+
+    if len(word) % 2 == 0:
+        return False
+    elif len(word) == 1:
+        return True
+    else:
+        for letter in word:
+            if letter not in letter_count_dict:
+                letter_count_dict[letter] = 1
+            else:
+                letter_count_dict[letter] += 1
+        print(letter_count_dict)
 
 
 if __name__ == "__main__":
