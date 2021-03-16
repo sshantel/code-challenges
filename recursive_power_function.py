@@ -14,7 +14,9 @@ Ask the user to enter 2 integers greater than 0.
 N, P = input("Enter 2 Integers greater than 0: ").split(',')
 def power(N, P): 
     # if power is 0 or 1 then number is returned
-    if (P == 0 or P == 1):
+    if (P == 0):
+        return 1
+    elif (P == 1):
         return int(N)
     else:
         return (int(N) * power(int(N), int(P)-1))
