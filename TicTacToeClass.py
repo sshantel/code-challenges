@@ -10,8 +10,13 @@ class TicTacToe():
 
     def display_board(self): 
         return self.matrix
-tt = TicTacToe(3, 3)
-print(tt) 
-print(tt.display_board()) 
-print(tt.columns)
-print(tt.display_board()) 
+
+    def edit_board(self, player, i, j): 
+        self.matrix[i][j] = player
+        return self.matrix
+
+tt = TicTacToe(3, 3) 
+print(tt.display_board())  
+tt.edit_board(0,0) 
+print(tt.edit_board('x',0,0))
+print(tt.display_board())
