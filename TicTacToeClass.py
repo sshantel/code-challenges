@@ -15,7 +15,7 @@ class TicTacToe():
         if self.matrix[i][j] == '_':
             self.matrix[i][j] = player
         else:
-            print('{i},{j} is already taken! Please make a different move on an open spot')
+            print(f'({i},{j}) is already taken! Please make a different move on an open spot')
         display_tt = []
         for row in self.matrix:
             display_tt.append(row)
