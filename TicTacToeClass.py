@@ -29,7 +29,7 @@ class TicTacToe():
 
     def check_winner_column(self):
         for row in self.matrix:
-            for column in self.matrix([0]):
+            for column in row:
                 if len(set(column)) == 1:
                     return 'winner!'
 
@@ -37,12 +37,9 @@ class TicTacToe():
     #     for row in self:
 
 tt = TicTacToe(3, 3) 
-print(tt.display_board()) 
-print(tt.edit_board('x',0,0))
-print(tt.display_board())
-print(tt.edit_board('x', 0, 1))
-print(tt.edit_board('x', 0, 2))
-print(tt.edit_board('O', 2,0))
-print(tt.edit_board('O', 1,1))
-print(tt.edit_board('O', 0,2))
+print(tt.display_board())   
+print(tt.edit_board('x', 0, 0))
+print(tt.edit_board('x', 1, 1))
+print(tt.edit_board('x', 2,2)) 
 print(tt.check_winner_row())
+print(tt.check_winner_column())
