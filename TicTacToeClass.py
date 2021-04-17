@@ -37,8 +37,8 @@ class TicTacToe():
             print(f'row is {row}')
             for column in range(len(self.matrix[0])):
                 print(f'column is {column}')
-                if (row == column):
-                    diagnols.append(self.matrix[row][column])
+                if (row == column) and self.matrix[row][column] != '_':
+                    diagnols.append([row, column])
                     if len(diagnols) == len(self.matrix):
                         print(diagnols)
                         return (
@@ -50,6 +50,6 @@ tt = TicTacToe(3, 3)
 print(tt.display_board())
 print(tt.edit_board('x', 0, 0))
 print(tt.edit_board('x', 1, 1))
-print(tt.edit_board('x', 1, 2))
+print(tt.edit_board('x', 2, 2))
 print(tt.check_winner_row())
 print(tt.check_winner_diagnol())
