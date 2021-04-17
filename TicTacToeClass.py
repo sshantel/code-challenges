@@ -16,7 +16,10 @@ class TicTacToe():
             self.matrix[i][j] = player
         else:
             print('{i},{j} is already taken! Please make a different move on an open spot')
-        return self.matrix
+        display_tt = []
+        for row in self.matrix:
+            display_tt.append(row)
+        return display_tt
 
     def check_winner_row(self):
         for row in self.matrix:
