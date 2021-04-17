@@ -26,19 +26,20 @@ class TicTacToe():
             print(f'row is {row}')
             if len(set(row)) == 1:
                 return 'winner!'
-
+    
     def check_winner_column(self):
+        pass
+
+    def check_winner_diagnol(self):
         for row in self.matrix:
             for column in row:
                 if len(set(column)) == 1:
                     return 'winner!'
-
-    # def check_winner_diagnol(self):
-    #     for row in self:
+ 
 
 tt = TicTacToe(3, 3) 
 print(tt.display_board())   
-print(tt.edit_board('x', 0, 0))
+print(tt.edit_board('x', 0, 0)) 
 print(tt.edit_board('x', 1, 1))
 print(tt.edit_board('x', 2,2)) 
 print(tt.check_winner_row())
