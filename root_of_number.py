@@ -15,4 +15,17 @@ output: 1.913
 input:  x = 9, n = 2
 output: 3
 """
-
+def root(x, n):
+   left = 0
+   right = x    
+   midpoint = (right + left) / 2
+   res = pow(midpoint, n) 
+   while abs(x-res)>0.001:
+     if res < x:
+        left = midpoint
+     else:
+        right = midpoint
+     midpoint = (right + left) / 2 
+     res = pow(midpoint, n)
+   return midpoint
+print(root(7, 3))
