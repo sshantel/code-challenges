@@ -12,10 +12,12 @@ class TicTacToe():
         return self.matrix
 
     def edit_board(self, player, i, j): 
+
         if self.matrix[i][j] == '_':
             self.matrix[i][j] = player
-        else:
-            print(f'({i},{j}) is already taken! Please make a different move on an open spot')
+        elif self.matrix[i][j] != '_':
+            print('sorry, this spot has already been taken. please choose a different spot') 
+
         display_tt = []
         for row in self.matrix:
             display_tt.append(row)
@@ -25,16 +27,13 @@ class TicTacToe():
         for row in self.matrix:
             print(f'row is {row}')
             if len(set(row)) == 1:
-                return 'winner!'
-    
-    def check_winner_column(self):
-        pass
+                return(f'row winner! Winner is {row[0]}') 
 
     def check_winner_diagnol(self):
         for row in self.matrix:
             for column in row:
                 if len(set(column)) == 1:
-                    return 'winner!'
+                    return (f'diagnol winner! Winner is {column[0]}')
  
 
 tt = TicTacToe(3, 3) 
@@ -42,5 +41,5 @@ print(tt.display_board())
 print(tt.edit_board('x', 0, 0)) 
 print(tt.edit_board('x', 1, 1))
 print(tt.edit_board('x', 2,2)) 
-print(tt.check_winner_row())
-print(tt.check_winner_column())
+print(tt.check_winner_row()) 
+print(tt.check_winner_diagnol()) 
