@@ -6,7 +6,7 @@ class TicTacToe():
     def __init__(self, rows, columns):
         self.rows = rows
         self.columns = columns 
-        self.matrix = [[0 for i in range(rows)] for j in range(columns)]
+        self.matrix = [[ '_' for i in range(rows)] for j in range(columns)]
 
     def display_board(self): 
         return self.matrix
@@ -15,9 +15,16 @@ class TicTacToe():
         self.matrix[i][j] = player
         return self.matrix
 
-    def check_winner_row_column(self):
+    def check_winner_row(self):
         for row in self.matrix:
-            print(row)
+            print(f'row is {row}')
+            if len(set(row)) == 1:
+                return 'winner!'
+
+    def check_winner_column(self):
+        for column in self.matrix([0]):
+            if len(set(column)) == 1:
+                return 'winner!'
 
     def check_winner_diagnol(self):
         pass
@@ -28,3 +35,7 @@ print(tt.edit_board('x',0,0))
 print(tt.display_board())
 print(tt.edit_board('x', 0, 1))
 print(tt.edit_board('x', 0, 2))
+print(tt.edit_board('O', 2,0))
+print(tt.edit_board('O', 1,1))
+print(tt.edit_board('O', 0,2))
+print(tt.check_winner_row())
