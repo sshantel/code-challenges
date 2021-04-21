@@ -9,7 +9,13 @@ Also note that the start of any particular interval will always be less than or 
 
 ""
 
+def merge_intervals(intervals):
+    sorted_intervals = sorted(intervals,key = lambda x:x[0])
+    merged_intervals = []
+    current_interval = sorted_intervals[0]
+    merged_intervals.append(current_interval)
 
-			
-			
-		
+    for next_interval in sorted_intervals:
+        _, current_intervalend = current_interval
+        next_interval_start,next_interval_end = next_interval
+ 
